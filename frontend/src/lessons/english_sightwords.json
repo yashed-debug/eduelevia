@@ -1,0 +1,15 @@
+{
+  "id": "english_sightwords_01",
+  "subject": "english",
+  "topic": "sightwords",
+  "title": "Sight Words (Set 1)",
+  "level": "beginner",
+  "instructions": "Read the word and choose the matching one. Use speak to hear it aloud.",
+  "words": ["the", "and", "you", "said", "to", "a", "in"],
+  "questions": [
+    { "id": "q1", "type": "mcq", "prompt": "Select: the", "choices": ["they", "then", "the", "there"], "answer": "the" },
+    { "id": "q2", "type": "mcq", "prompt": "Select: and", "choices": ["ant", "and", "end", "add"], "answer": "and" },
+    { "id": "q3", "type": "mcq", "prompt": "Select: you", "choices": ["your", "you", "yours", "young"], "answer": "you" }
+  ]
+}
+

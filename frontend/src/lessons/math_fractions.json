@@ -1,0 +1,32 @@
+{
+  "id": "math_fractions_01",
+  "subject": "math",
+  "topic": "fractions",
+  "title": "Fractions Foundations",
+  "level": "beginner",
+  "instructions": "Pick the correct fraction or simplify when asked.",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "prompt": "Which fraction equals one half?",
+      "choices": ["2/4", "3/4", "1/3", "2/3"],
+      "answer": "2/4"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "prompt": "Simplify 4/8.",
+      "choices": ["1/2", "2/3", "3/4", "4/8"],
+      "answer": "1/2"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "prompt": "Which is larger?",
+      "choices": ["1/4", "1/3", "They are equal", "Not sure"],
+      "answer": "1/3"
+    }
+  ]
+}
+

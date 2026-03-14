@@ -1,0 +1,15 @@
+{
+  "id": "hindi_varnamala_01",
+  "subject": "hindi",
+  "topic": "varnamala",
+  "title": "हिंदी वर्णमाला (स्वर)",
+  "level": "beginner",
+  "instructions": "सही अक्षर चुनें।",
+  "letters": ["अ", "आ", "इ", "ई", "उ", "ऊ", "ए", "ऐ", "ओ", "औ"],
+  "questions": [
+    { "id": "q1", "type": "mcq", "prompt": "यह कौन सा अक्षर है: अ", "choices": ["अ", "आ", "इ", "उ"], "answer": "अ" },
+    { "id": "q2", "type": "mcq", "prompt": "यह कौन सा अक्षर है: ई", "choices": ["इ", "ई", "उ", "ए"], "answer": "ई" },
+    { "id": "q3", "type": "mcq", "prompt": "यह कौन सा अक्षर है: औ", "choices": ["ओ", "औ", "ऐ", "ए"], "answer": "औ" }
+  ]
+}
+
