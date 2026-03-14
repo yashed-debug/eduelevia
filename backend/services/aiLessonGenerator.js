@@ -1,60 +1,59 @@
 import OpenAI from "openai"
 
-const client = new OpenAI({
- apiKey: process.env.OPENAI_API_KEY
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
 })
 
-export async function generateLesson(topic, grade){
+export async function generateQuiz(topic, grade) {
 
- const prompt = `
-You are an expert elementary school teacher.
+  try {
 
-Create a quiz for Grade ${grade} students about "${topic}".
+    const prompt = `
+Create a quiz for students.
 
-Requirements:
-- Exactly 15 questions
-- Multiple choice
-- 4 options per question
-- Exactly ONE correct answer
-- Include a helpful hint
-- Questions must be simple and age appropriate
+Topic: ${topic}
+Grade level: ${grade}
 
-Return ONLY valid JSON in this format:
+Generate 3 multiple choice questions.
 
-[
- {
-  "question": "",
-  "options": ["","","",""],
-  "answer": "",
-  "hint": ""
- }
-]
+Return JSON like this:
+
+{
+ "questions":[
+  {
+   "question":"...",
+   "options":["A","B","C","D"],
+   "answer":"..."
+  }
+ ]
+}
 `
 
- try {
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "user", content: prompt }
+      ]
+    })
 
-  const completion = await client.chat.completions.create({
-   model: "gpt-4.1",
-   messages: [
-    {
-     role: "system",
-     content: "You are a professional teacher creating educational quizzes."
-    },
-    {
-     role: "user",
-     content: prompt
+    const text = completion.choices[0].message.content
+
+    return JSON.parse(text)
+
+  } catch (error) {
+
+    console.error("AI error:", error)
+
+    return {
+      questions: [
+        {
+          question: "Example question about " + topic,
+          options: ["A", "B", "C", "D"],
+          answer: "A"
+        }
+      ]
     }
-   ],
-   temperature: 0.7
-  })
 
-  return completion.choices[0].message.content
-
- } catch (error) {
-
-  console.error("AI generation error:", error)
-  throw error
-
- }
+  }
 
 }
